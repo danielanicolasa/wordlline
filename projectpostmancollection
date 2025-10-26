@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "8af93e5a-ea11-41ca-a442-97b6b1a05b5c",
+		"name": "My Collection",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47643487",
+		"_collection_link": "https://dnmm2111-9813532.postman.co/workspace/Dani-M's-Workspace~72d1e1c1-e795-4f54-8b2c-eb399a562463/collection/47643487-8af93e5a-ea11-41ca-a442-97b6b1a05b5c?action=share&source=collection_link&creator=47643487"
+	},
+	"item": [
+		{
+			"name": "1. list all tasks",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/all-lists-tasks?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"all-lists-tasks"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. create empty task list",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/create-empty-task-list?userId=1&name=testcreateemptylist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"create-empty-task-list"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						},
+						{
+							"key": "name",
+							"value": "testcreateemptylist"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. update task",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "updated",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "updated",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/update-task",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"update-task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. delete one task",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/delete-task?taskId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"delete-task"
+					],
+					"query": [
+						{
+							"key": "taskId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6 I can delete an entire list with all its tasks",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/delete-task-list?taskListId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"delete-task-list"
+					],
+					"query": [
+						{
+							"key": "taskListId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. I can move tasks to a different list",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/move-task-to-task-list?newTaskListId=4&oldTaskListId=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"move-task-to-task-list"
+					],
+					"query": [
+						{
+							"key": "newTaskListId",
+							"value": "4"
+						},
+						{
+							"key": "oldTaskListId",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. create task in task list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/create-task?taskListId=5&name=name&description=description",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"create-task"
+					],
+					"query": [
+						{
+							"key": "taskListId",
+							"value": "5"
+						},
+						{
+							"key": "name",
+							"value": "name"
+						},
+						{
+							"key": "description",
+							"value": "description"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
